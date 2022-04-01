@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>POKEDEX</h1>
+    <img alt="pokdex" src="../assets/pokedex.png" id="pokedex-logo">
     <!-- <p>{{ maVariable }}</p>
     <p>{{ compteur }}</p>
     <input type="text" v-model="firstName" /> -->
@@ -14,7 +14,7 @@
 
     <br /> -->
 <div class="pokeContainer">
-    <div v-for="(obj, index) in pokemons" v-bind:key="index">
+    <div class="pokemon-case" v-for="(obj, index) in pokemons" v-bind:key="index">
         <h1>
           <router-link v-bind:to="'/pokemons/' + obj.id">
           <img :src="obj.image" alt="">
@@ -46,6 +46,19 @@ ul {
         justify-content: center;
 }
 
+#pokedex-logo{
+  width: 35rem;
+  padding-bottom: 3%;
+}
+
+.pokemon-case{
+  
+}
+
+
+.pokemon-case:hover{
+  transform: scale(1.5);
+}
 
 </style>
 

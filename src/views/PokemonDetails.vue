@@ -1,20 +1,25 @@
 <template>
   <div>
     <div></div>
+     <h1>{{ pokemonId }}</h1>
+    <h2 class="name">{{ onePokemon.name }}</h2>
     <div class="mid-container">
+      <div class="container">
       <img :src="onePokemon.artwork" alt="" />
-      <div id="health">{{ onePokemon.hp }}</div>
+      <audio controls :src="onePokemon.sound"></audio></div>
+      <div id="health">❤{{ onePokemon.hp }}</div>
+      <div id="weight">{{ onePokemon.weight }} KG</div>
       <img v-for="t in onePokemon.imgType" :key="t" :src="t" />
     </div>
-    <h1>ID du Pokemon : {{ pokemonId }}</h1>
-    <h2>{{ onePokemon.name }}</h2>
+     
     <img :src="onePokemon.animatedFront" class="gif" alt="" />
     <img :src="onePokemon.animatedBack" class="gif" alt="" />
     <img :src="onePokemon.pokemonShinyFront" alt="" />
-    <div v-for="m in onePokemon.move" :key="m" class="moves-container">
+    <div class="moves-container">
+      <div v-for="m in onePokemon.move" :key="m" class="moves">
       {{ m }}
     </div>
-    <audio controls :src="onePokemon.sound"></audio>
+    </div>
   </div>
 </template>
 
@@ -41,6 +46,24 @@
   font-weight: bolder;
   text-transform: uppercase;
 }
+
+
+.moves-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.name{
+  font-weight: lighter;
+}
+
+.moves {
+  margin: 8px;
+}
+
+
 </style>
 
 <script>
