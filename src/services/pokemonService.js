@@ -26,9 +26,17 @@ export class PokemonService {
                     //pokemonData n'est pas un tableau mais un objet(json)
                     let pokemonType = response.data.types;
                     let pokemonMove = response.data.moves;
+                    let pokemonName = response.data.name
                     let typeTable = [];
                     let moveTable = [];
+                    let randomTable = []; 
 
+
+                    for (let r = 0; r < pokemonName.length;r++){
+                        randomTable.push(response.data.name);   
+                    }
+                    
+                    
                     for (let t = 0; t < pokemonType.length; t++) {
                         typeTable.push(response.data.types[t].type.name);
 
@@ -112,6 +120,7 @@ export class PokemonService {
 
                         }
 
+
                     });
 
 
@@ -132,8 +141,11 @@ export class PokemonService {
                     result.shinyFront = response.data.sprites.front_shiny
                     result.sound = "https://www.pokebip.com/audio/cris-sl/" + id + ".mp3"
 
+                
+
                     result.types = typeTable
                     result.move = moveTable
+                    result.random = randomTable
 
 
 

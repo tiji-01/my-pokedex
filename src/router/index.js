@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import demo from '../views/demo.vue'
 import PokemonDetails from '../views/PokemonDetails.vue'
+import mystere from '../views/mystere.vue'
 
 Vue.use(VueRouter)
 
@@ -11,6 +12,13 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+
+
+  {
+    path: '/mystere',
+    name: 'mystere',
+    component: mystere
   },
 
 
